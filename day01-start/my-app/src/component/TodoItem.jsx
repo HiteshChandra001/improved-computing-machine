@@ -1,8 +1,8 @@
 import React from 'react'
 
-const TodoItem = ({title,status}) => {
+const TodoItem = ({id,title,status,handleToogle,handleDelete}) => {
   return (
-    <li>{title}-{status?"complete":"incomplete"}</li>
+    <li>{title}-{status?"completed":"pending"} <button onClick={()=>handleToogle(id)}>Toogle</button> <button onClick={()=>handleDelete(id)}>delete</button></li>
   )
 }
 

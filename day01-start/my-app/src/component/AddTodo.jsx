@@ -1,21 +1,21 @@
 import React, { useState } from 'react'
 
-const AddTodo = ({handleTodos}) => {
-    const [text,setText]=useState('');
-
-    const handleTextChange=(e)=>{
+const AddTodo = ({handleAdd}) => {
+    const[text,setText]=useState('');
+    const handleChange=(e)=>{
         setText(e.target.value);
     }
 
-    const handleAddBtn=()=>{
-        handleTodos(text);
+    const onClick=()=>{
+        handleAdd(text);
         setText('');
     }
 
-return (
+
+  return (
     <div>
-        <input type='text' value={text} onChange={handleTextChange} />
-        <button onClick={handleAddBtn}>Add</button>
+        <input type='text' value={text} onChange={handleChange}/>
+        <button onClick={onClick}>Add</button>
     </div>
   )
 }
