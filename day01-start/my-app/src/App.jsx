@@ -1,12 +1,11 @@
 
-import Todo from './component/Todo';
+import PostPag from './component/PostPag';
 function App() {
 
   return (
     <>
-     {/* <Color /> */}
-
-     <Todo />
+    <PostPag />
+     {/* <Todo /> */}
     </>
   )
 }
