@@ -1,10 +1,10 @@
 
-import PostPag from './component/PostPag';
 function App() {
 
   return (
     <>
-    <PostPag />
+    {/* <Cart /> */}
+    {/* <PostPag /> */}
      {/* <Todo /> */}
     </>
   )
