@@ -1,32 +1,30 @@
-// Initialize the map and set its view
-const map = L.map('map').setView([51.505, -0.09], 13); // [latitude, longitude], zoom level
+// Initialize the map and set its view to Bilaspur, Chhattisgarh
+const map = L.map('map').setView([22.0796, 82.1391], 13); // Bilaspur coordinates
 
 // Add a tile layer (OpenStreetMap)
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '© OpenStreetMap contributors'
 }).addTo(map);
 
-// Add a marker at the specified location
-const marker = L.marker([51.505, -0.09]).addTo(map);
-marker.bindPopup('<b>Hello world!</b><br>This is a popup.').openPopup();
+// Add a popup that will be updated on hover
+const popup = L.popup();
 
-// Add a circle to the map
-const circle = L.circle([51.508, -0.11], {
-  color: 'red',
-  fillColor: '#f03',
-  fillOpacity: 0.5,
-  radius: 500
-}).addTo(map);
+// Function to fetch place name using reverse geocoding
+async function fetchPlaceName(lat, lng) {
+  const response = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}`);
+  if (response.ok) {
+    const data = await response.json();
+    return data.display_name; // The place name from the API
+  }
+  return "Unknown Location";
+}
 
-// Add a polygon to the map
-const polygon = L.polygon([
-  [51.509, -0.08],
-  [51.503, -0.06],
-  [51.51, -0.047]
-]).addTo(map);
-polygon.bindPopup('This is a polygon.');
-
-// Add an event listener for clicks on the map
-map.on('click', (e) => {
-  alert(`You clicked the map at ${e.latlng}`);
+// Event listener for mouse movement on the map
+map.on('mousemove', async (e) => {
+  const { lat, lng } = e.latlng; // Extract latitude and longitude
+  const placeName = await fetchPlaceName(lat, lng); // Fetch the place name
+  popup
+    .setLatLng(e.latlng)
+    .setContent(`<b>Place:</b> ${placeName}`)
+    .openOn(map);
 });
