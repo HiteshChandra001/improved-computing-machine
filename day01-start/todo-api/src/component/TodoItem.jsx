@@ -8,14 +8,13 @@ const TodoItem = ({ id, title, status, handleUpdate, handleDelete }) => {
       <span className={`flex-grow ${status ? 'line-through text-gray-500' : ''}`}>
         {title}
       </span>
-      <div className="flex space-x-2">
         {/* Toggle Status Button */}
         <IconButton
           color="primary"
           onClick={() => handleUpdate(id, status)}
           title="Toggle Status"
-        >
-          {status ? <HighlightOff /> : <CheckCircleOutline />}
+        >  
+            {status ?  <CheckCircleOutline />  : <HighlightOff />}
         </IconButton>
 
         {/* Delete Button */}
@@ -26,7 +25,6 @@ const TodoItem = ({ id, title, status, handleUpdate, handleDelete }) => {
         >
           <Delete />
         </IconButton>
-      </div>
     </li>
   );
 };

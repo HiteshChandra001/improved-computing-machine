@@ -1,12 +1,39 @@
 import React, { useState } from 'react';
 import { TextField, IconButton } from '@mui/material';
-import { Add } from '@mui/icons-material';
+import { AddBox } from '@mui/icons-material';
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AddTodo = ({ handleAdd }) => {
   const [task, setTask] = useState('');
 
   const handleAddTask = () => {
-    handleAdd(task);
+    if (task.trim() !== '') {
+      toast.success('Task added successfully!', {
+        position: 'top-right',
+        autoClose: 3000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'colored',
+      });
+      handleAdd(task.trim());
+      
+    } else {
+      toast.error('Task cannot be blank!', {
+        position: 'top-right',
+        autoClose: 3000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'colored',
+      });
+    }
     setTask('');
   };
 
@@ -24,8 +51,9 @@ const AddTodo = ({ handleAdd }) => {
         onClick={handleAddTask}
         title="Add Todo"
       >
-        <Add />
+        <AddBox fontSize="large" />
       </IconButton>
+      <ToastContainer />
     </div>
   );
 };
