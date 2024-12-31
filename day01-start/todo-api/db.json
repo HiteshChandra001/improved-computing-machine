@@ -13,12 +13,12 @@
     {
       "id": "7",
       "title": "Angular",
-      "status": false
+      "status": true
     },
     {
       "id": "8",
       "title": "Vue.js",
-      "status": true
+      "status": false
     },
     {
       "id": "9",
@@ -41,11 +41,6 @@
       "status": false
     },
     {
-      "id": "id-39a1db70-d99c-4afd-a9f1-e2f1185819b2",
-      "title": "abcd",
-      "status": false
-    },
-    {
       "id": "id-717a836e-704c-494d-b35f-5eca2f623124",
       "title": "xyz",
       "status": false
@@ -53,6 +48,21 @@
     {
       "id": "id-4f620c2e-2a50-4620-92a8-4edeb9d78e71",
       "title": "hhh",
+      "status": false
+    },
+    {
+      "id": "id-b52aae95-fb08-44c6-8d3b-2790f2900833",
+      "title": "gggg",
+      "status": false
+    },
+    {
+      "id": "id-791ba789-e59e-4b08-82b3-14128f3e9c2a",
+      "title": "fff",
+      "status": false
+    },
+    {
+      "id": "id-ce365231-d3d9-4d04-9ae6-2f0dfa7a7791",
+      "title": "zzzz",
       "status": false
     }
   ]

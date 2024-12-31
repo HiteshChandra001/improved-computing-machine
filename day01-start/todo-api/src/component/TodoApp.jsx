@@ -123,7 +123,7 @@ const TodoApp = () => {
 
   const handleUpdate = async (id,stat) => {
     try{
-      updateTodoApi(apiurl,id,stat)
+      await updateTodoApi(apiurl,id,stat)
       await getAllTodos();
     }catch (error) {
       setError('Failed to update todo.');

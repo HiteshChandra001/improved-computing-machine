@@ -1,11 +1,34 @@
-import React from 'react'
+import React from 'react';
+import { IconButton } from '@mui/material';
+import { Delete, Edit, CheckCircleOutline, HighlightOff } from '@mui/icons-material';
 
-const TodoItem = ({id,title,status,handleUpdate,handleDelete}) => {
+const TodoItem = ({ id, title, status, handleUpdate, handleDelete }) => {
   return (
-    <li key={id} >
-        {title}-{status?"completed":"incomplete"} <button onClick={()=>handleUpdate(id,status)}>toogle</button>   <button onClick={()=>handleDelete(id)}>delete</button>
-    </li>
-  )
-}
+    <li className="flex items-center justify-between p-2 border-b">
+      <span className={`flex-grow ${status ? 'line-through text-gray-500' : ''}`}>
+        {title}
+      </span>
+      <div className="flex space-x-2">
+        {/* Toggle Status Button */}
+        <IconButton
+          color="primary"
+          onClick={() => handleUpdate(id, status)}
+          title="Toggle Status"
+        >
+          {status ? <HighlightOff /> : <CheckCircleOutline />}
+        </IconButton>
 
-export default TodoItem
+        {/* Delete Button */}
+        <IconButton
+          color="error"
+          onClick={() => handleDelete(id)}
+          title="Delete Todo"
+        >
+          <Delete />
+        </IconButton>
+      </div>
+    </li>
+  );
+};
+
+export default TodoItem;
