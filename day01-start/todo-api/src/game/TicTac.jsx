@@ -49,6 +49,7 @@ const TicTac = () => {
         setArr(initArr);
         setWinner(null);
         setPlayer('O');
+        setIsDraw(false);
     }
 
     return (
