@@ -7,7 +7,7 @@ const TicTac = () => {
     const [arr, setArr] = useState(initArr);
     const [player, setPlayer] = useState('O');
     const [winner, setWinner] = useState(null);
-	const [isDraw, setIsDraw] = useState(false); 
+    const [isDraw, setIsDraw] = useState(false);
 
 
     const checkWinner = (board) => {
@@ -26,7 +26,7 @@ const TicTac = () => {
         return null;
     }
 
-	const checkDraw = (board) => {
+    const checkDraw = (board) => {
         // Check if all cells are filled and there's no winner
         return board.every(cell => cell !== null) && !checkWinner(board);
     };
@@ -35,11 +35,11 @@ const TicTac = () => {
         const newArr = [...arr];
         newArr[ind] = player;
         setArr(newArr);
-		const win = checkWinner(newArr);
+        const win = checkWinner(newArr);
         setWinner(win);
 
         if (!win && checkDraw(newArr)) {
-            setIsDraw(true); 
+            setIsDraw(true);
         } else {
             setPlayer(p => (p === 'X' ? 'O' : 'X'));
         }
@@ -53,15 +53,15 @@ const TicTac = () => {
 
     return (
         <div>
-			<h1>
+            <h1>
                 {winner
                     ? `Winner is ${winner}`
                     : isDraw
-                    ? "It's a draw!"
-                    : `Your turn ${player}`}
-            </h1>    
+                        ? "It's a draw!"
+                        : `Your turn ${player}`}
+            </h1>
             <div className="board">
-				
+
                 {arr.map((e, i) => (
                     <div key={i} className="cell" onClick={() => handleClick(i)}>
                         {e}
@@ -69,6 +69,10 @@ const TicTac = () => {
                 ))}
                 <button onClick={reset}>Reset</button>
             </div>
+
+            <h1 style={{ textAlign: 'center', marginTop: '20px', fontSize: '14px', color: '#555' }}>
+                Made with ❤️ by Hitesh Chandra
+            </h1>
         </div>
     );
 }

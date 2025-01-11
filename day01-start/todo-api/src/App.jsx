@@ -5,9 +5,10 @@ function App() {
 
   return (
     <>
-    <TicTac />
+      <TicTac />
     </>
-  )
+  );
+  
 }
 
 export default App
