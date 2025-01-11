@@ -1,12 +1,11 @@
-import { useState } from 'react'
 import './App.css'
-import TodoApp from './component/TodoApp'
+import TicTac from './game/TicTac'
 
 function App() {
 
   return (
     <>
-      <TodoApp />
+    <TicTac />
     </>
   )
 }

@@ -1,0 +1,91 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f9fc; /* Light background */
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  h1 {
+    font-size: 32px;
+    color: #2c3e50; /* Darker heading */
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Board Styles */
+  .board {
+    display: flex;
+    width: 300px; /* Fixed width for the board */
+    justify-content: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 10px; /* Space between cells */
+  }
+  
+  .cell {
+    width: 90px;
+    height: 90px;
+    border: 2px solid #2ecc71; /* Bright green border */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    background-color: #ecf0f1; /* Subtle background */
+    transition: background-color 0.3s, transform 0.3s;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  .cell:hover {
+    background-color: #b8e994; /* Light green on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+    cursor: pointer;
+  }
+  
+  /* Button Styles */
+  button {
+    padding: 12px 24px;
+    font-size: 18px;
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  button:hover {
+    background-color: #27ae60;
+    transform: translateY(-2px);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 350px) {
+    .board {
+      width: 100%; /* Full width on small screens */
+      gap: 5px; /* Smaller gap for mobile view */
+    }
+  
+    .cell {
+      width: 70px; /* Smaller cells */
+      height: 70px;
+      font-size: 20px; /* Smaller font size */
+    }
+  
+    button {
+      width: 100%; /* Full-width button for mobile */
+      padding: 10px;
+    }
+  
+    h1 {
+      font-size: 24px; /* Adjusted heading size */
+    }
+  }
+  
