@@ -53,6 +53,8 @@ const TicTac = () => {
 
     return (
         <div>
+            <h1>TicTacToe ❌⭕</h1>
+
             <h1>
                 {winner
                     ? `Winner is ${winner}`
@@ -61,7 +63,6 @@ const TicTac = () => {
                         : `Your turn ${player}`}
             </h1>
             <div className="board">
-
                 {arr.map((e, i) => (
                     <div key={i} className="cell" onClick={() => handleClick(i)}>
                         {e}
@@ -69,10 +70,7 @@ const TicTac = () => {
                 ))}
                 <button onClick={reset}>Reset</button>
             </div>
-
-            <h1 style={{ textAlign: 'center', marginTop: '20px', fontSize: '14px', color: '#555' }}>
-                Made with ❤️ by Hitesh Chandra
-            </h1>
+            <h1> Made with ❤️ by HITESH </h1>
         </div>
     );
 }
